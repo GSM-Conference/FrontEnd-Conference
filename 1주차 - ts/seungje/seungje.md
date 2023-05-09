@@ -80,7 +80,7 @@ const calculator = (num1: number, num2: number) => {
 1에서는 `123`이라는 `number`타입의 결과가 출력된다.  
 2에서는 컴파일 과정에서 오류가 난다.
 
-<img src='./imgs/TypeErr.png'>
+<img src='./image/TypeErr.png'>
 
 이렇게 오류로 나타내짐으로서 운영시에 생길 문제를 미리 예방할 수 있다.
 
@@ -151,7 +151,7 @@ type Ex1 = {
 };
 ```
 
-<img src='./imgs/TypeErr2.png'>
+<img src='./image/TypeErr2.png'>
 <br/>
 <br/>
 <br/>
