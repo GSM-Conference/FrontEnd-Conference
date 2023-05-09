@@ -152,6 +152,8 @@ interface IStudent {
 
     ##### 이외에도 느린 비트 함수, 디버깅 기능의 부족, 렌더링 중지 등 여러가지 단점이 존재한다.
 
+    [참고 자료](https://velog.io/@nittre/Pros-and-Cons-of-JavaScript-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%9D%98-%EC%9E%A5%EB%8B%A8%EC%A0%90)
+
 <br>
 <br>
 <br>
