@@ -63,6 +63,8 @@ JavaScript는 의도하지 않은 타입의 인자가 들어오더라도 걸러�
 
 ## TypeScript
 
+<img src='https://upload.wikimedia.org/wikipedia/commons/f/f5/Typescript.svg' width='300'>
+
 **TypeScript는 JavaScript와 다르게 변수의 타입을 지정해준다.**  
 변수의 타입을 지정해 줌으로서 위와 같은 문제를 줄일 수 있다.
 
