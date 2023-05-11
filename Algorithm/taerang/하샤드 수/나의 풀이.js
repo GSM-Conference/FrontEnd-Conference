@@ -15,4 +15,6 @@ function solution(x) {
   //   answer = false;
   //   return answer;
   // }
+
+  x % result === 0 ? true : false;
 }
