@@ -13,7 +13,6 @@ function solution(myString) {
     } else {
       answer += myString[i]; //둘 다 아니면 그냥 answer에 대입
     }
-    console.log(answer);
   }
   return answer;
 }
