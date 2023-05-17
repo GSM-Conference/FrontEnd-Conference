@@ -9,10 +9,12 @@ function solution(x) {
     num = Math.trunc(num / 10); //소수점 버려주는 것기능 math.trunc!! 중요함
   }
 
-  if (x % result === 0) {
-    return answer;
-  } else {
-    answer = false;
-    return answer;
-  }
+  // if (x % result === 0) {
+  //   return answer;
+  // } else {
+  //   answer = false;
+  //   return answer;
+  // }
+
+  x % result === 0 ? true : false;
 }
