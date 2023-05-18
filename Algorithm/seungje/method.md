@@ -31,4 +31,5 @@ console.log(parseInt(num)); // => 12
 
 ### Math.floor과 parseInt의 차이
 
-음수일 경우에 Math.floor은 내림을 하지만 parseInt는 올림을 한다
+음수일 경우에 Math.floor은 내림을 하지만 parseInt는 올림을 한다  
+성능적으로는 Math.floor이 더 빠르다고하여 앞으로는 Math.floor을 써야겠다
