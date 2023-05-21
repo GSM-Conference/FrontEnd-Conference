@@ -357,6 +357,39 @@ str.repeat(count);
 "abc".repeat(2); // 'abcabc'
 ```
 
+## String.substring()
+
+`substring()`메소드는 string 객체의 시작 인덱스로부터 종료 인덱스 전 까지 문자열의 부분 문자열을 반환합니다.
+
+**구문**
+
+```js
+str.substring(indexStart[, indexEnd])
+```
+
+- indexStart
+  반환 문자열의 시작 인덱스
+- indexEnd
+  옵션. 반환문자열의 마지막 인덱스
+
+```js
+var anyString = "Mozilla";
+
+// Displays 'M'
+console.log(anyString.substring(0, 1));
+console.log(anyString.substring(1, 0));
+
+// Displays 'Mozill'
+console.log(anyString.substring(0, 6));
+
+// Displays 'lla'
+console.log(anyString.substring(4));
+```
+
+**반환**
+
+기존 문자열의 부분 문자열을 반환
+
 ## Array 추가 및 제거 메소드
 
 **배열에 값을 추가하는 함수**
