@@ -33,3 +33,26 @@ console.log(parseInt(num)); // => 12
 
 음수일 경우에 Math.floor은 내림을 하지만 parseInt는 올림을 한다  
 성능적으로는 Math.floor이 더 빠르다고하여 앞으로는 Math.floor을 써야겠다
+
+## replace
+
+replace는 문자열을 치환해주는 함수이다
+
+```js
+const num = "12345";
+console.log(num.replace("1", "01")); // => 012345
+```
+
+하지만 중복된 문자는 처리하지 못한다
+
+```js
+const num = "11111";
+console.log(num.replace("1", "0")); // => 01111
+```
+
+중복된 문자까지 처리하라면 정규식을 사용해야한다
+
+```js
+const num = "11111";
+console.log(num.replace(/1/g, "0")); // => 00000
+```
