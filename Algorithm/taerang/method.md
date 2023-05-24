@@ -1,6 +1,6 @@
 # method
 
-## reduce
+### reduce
 
 - #### 함수를 실행하고 하나의 결과값을 반환
 - #### reduce는 줄이다 라는 뜻이며, 누산기라고 할 수 있다.
@@ -17,3 +17,9 @@
 const numbers = [4, 3, 2, 1];
 let sum = numbers.reduce((acc, cur) => acc + cur);
 ```
+
+### Math
+
+- #### ceil
+
+- #### floor
