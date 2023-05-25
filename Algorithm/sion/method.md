@@ -401,3 +401,35 @@ console.log(anyString.substring(4));
 
 1. .pop() : 배열의 맨 끝에 값을 제거
 2. .shift() : 배열의 맨 앞에 값을 제거
+
+## Array.findIndex()
+
+`findIndex()` 메서드는 **주어진 판별 함수**를 만족하는 배열의 첫 번째 요소에 대한 인덱스를 반환합니다. 만족하는 요소가 없으면 -1을 반환합니다.
+
+```js
+const array1 = [5, 12, 8, 130, 44];
+
+const isLargeNumber = (element) => element > 13;
+
+console.log(array1.findIndex(isLargeNumber));
+// Expected output: 3
+```
+
+indexOf와 차이점은 findIndex는 함수를 인자로 준다는 것이고 indexOf는 값을 인자로 넘겨준다.
+
+findIndex는 index를 반환하고 인덱스 대신 값을 반환하는 find 메서드도 있다.
+
+**구문**
+
+```js
+arr.findIndex(callback(element[, index[, array]])[, thisArg])
+```
+
+- callback
+  3개 인수를 취하여 배열의 각 값에 대해 실행할 함수 입니다.
+- element
+  배열에서 처리중인 현재 요소입니다.
+- index
+  배열에서 처리중인 현재 요소의 인덱스 입니다.
+- array
+  findIndex함수가 호출된 배열입니다.
