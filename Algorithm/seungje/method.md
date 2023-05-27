@@ -56,3 +56,12 @@ console.log(num.replace("1", "0")); // => 01111
 const num = "11111";
 console.log(num.replace(/1/g, "0")); // => 00000
 ```
+
+## lastIndexOf
+
+lastIndexOf(n)는 배열에서 n이 존재하는 마지막 `index`를 반환한다
+
+```js
+const nums = [0, 1, 2, 3, 4, 0];
+console.log(nums.lastIndexOf(0)); // => 5
+```
