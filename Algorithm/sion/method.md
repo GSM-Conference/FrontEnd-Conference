@@ -433,3 +433,35 @@ arr.findIndex(callback(element[, index[, array]])[, thisArg])
   배열에서 처리중인 현재 요소의 인덱스 입니다.
 - array
   findIndex함수가 호출된 배열입니다.
+
+## Array.fill()
+
+`fill()`은 배열의 시작 인덱스부터 끝 인덱스의 이전까지 정적인 값 하나로 채웁니다.
+
+```js
+const array1 = [1, 2, 3, 4];
+
+// Fill with 0 from position 2 until position 4
+console.log(array1.fill(0, 2, 4));
+// Expected output: Array [1, 2, 0, 0]
+
+// Fill with 5 from position 1
+console.log(array1.fill(5, 1));
+// Expected output: Array [1, 5, 5, 5]
+
+console.log(array1.fill(6));
+// Expected output: Array [6, 6, 6, 6]
+```
+
+**구문**
+
+```js
+ arr.fill(value[, start[, end]])
+```
+
+- value
+  배열을 채울 값.
+- start
+  시작 인덱스, 기본 값은 0.
+- end
+  끝 인덱스.
