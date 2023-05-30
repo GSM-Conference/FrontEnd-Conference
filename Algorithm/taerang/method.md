@@ -48,3 +48,30 @@ Digit.sort((previous, current) => current - previous); //내림차순
 const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 nums.slice(5, 10)[(5, 6, 7, 8, 9)];
 ```
+
+### Substring
+
+    string에서 자르고싶은 시작위치(start)부터 끝위치(end)까지 반환.
+    end는 생략 가능하며 생략할 경우 문자열 끝까지 자른다.
+
+    ex) string.substring(start,end)
+
+##### 예제
+
+```js
+const str = "나는 치킨이 좋아";
+
+const result1 = str.substring(0, 2); // '나는'
+const result2 = str.substring(2, 4); // ' 치'
+const result3 = str.substring(2); // ' 치킨이 좋아'
+```
+
+    substring()은 start 인덱스부터 end 인덱스 전까지 반환을 하기 때문에 substring(0,1)의 경우
+    0번 인덱스에서부터 1번인덱스 이전에 문자를 반환한다. (1번 인덱스에 문자는 반환하지 않음)
+
+```js
+const str = "가나다라";
+
+const result = str.substring(0, 2); // 결과 : "가나"
+// 각 단어 인덱스 가[0] 나[1] 다[2] 라[3]
+```
