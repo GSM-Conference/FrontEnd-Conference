@@ -456,7 +456,7 @@ console.log(array1.fill(6));
 **구문**
 
 ```js
- arr.fill(value[, start[, end]])
+arr.fill(value[, start[, end]])
 ```
 
 - value
@@ -465,3 +465,35 @@ console.log(array1.fill(6));
   시작 인덱스, 기본 값은 0.
 - end
   끝 인덱스.
+
+## Array.from()
+
+`from()`은 유사 배열 객체나 반복 가능한 객체를 얕게 복사해 새로운 Array 객체를 만듭니다.
+
+```js
+console.log(Array.from("foo"));
+// Expected output: Array ["f", "o", "o"]
+
+console.log(Array.from([1, 2, 3], (x) => x + x));
+// Expected output: Array [2, 4, 6]
+```
+
+**구문**
+
+```js
+Array.from(arrayLike[, mapFn[, thisArg]])
+```
+
+- arrayLike
+  배열로 변환하고자 하는 유사 배열 객체나 반복 가능한 객체.
+- mapFn
+  배열의 모든 요소에 대해 호출할 맵핑 함수.
+
+**활용**  
+10부터 1씩 줄어드는 배열 만들기
+
+```js
+function solution(start, end) {
+  return Array.from(Array(start - end + 1), (_, i) => start - i);
+}
+```
