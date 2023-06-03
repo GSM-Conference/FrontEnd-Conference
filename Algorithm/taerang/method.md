@@ -56,7 +56,7 @@ nums.slice(5, 10)[(5, 6, 7, 8, 9)];
 
     ex) string.substring(start,end)
 
-##### 예제
+#### 예제
 
 ```js
 const str = "나는 치킨이 좋아";
@@ -66,8 +66,7 @@ const result2 = str.substring(2, 4); // ' 치'
 const result3 = str.substring(2); // ' 치킨이 좋아'
 ```
 
-    substring()은 start 인덱스부터 end 인덱스 전까지 반환을 하기 때문에 substring(0,1)의 경우
-    0번 인덱스에서부터 1번인덱스 이전에 문자를 반환한다. (1번 인덱스에 문자는 반환하지 않음)
+##### substring()은 start 인덱스부터 end 인덱스 전까지 반환을 하기 때문에 substring(0,1)의 경우<br>0번 인덱스에서부터 1번인덱스 이전에 문자를 반환한다. (1번 인덱스에 문자는 반환하지 않음)
 
 ```js
 const str = "가나다라";
