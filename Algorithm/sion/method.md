@@ -1,0 +1,499 @@
+## Number.isInteger()
+
+Number.isInteger 메소드는 인수의 값이 정수인지 아닌지를 반환해줍니다.  
+전달된 값이 정수이면 true 아니라면 NaN, Infinity와 같은 값은 모두 false를 반환합니다.
+
+```JS
+Number.isInteger(0); // true
+Number.isInteger(0.1); // false
+Number.isInteger("문자열"); // false
+Number.isInteger(true); // false
+Number.isInteger(Infinity); // false
+```
+
+## Math.sqrt()
+
+sqrt 메소드는 특정숫자의 제곱근 값을 계산해줍니다. 쉽게말해 루트값을 구하는 것입니다.
+
+```JS
+Math.sqrt(4); // 2
+Math.sqrt(16); // 4
+Math.sqrt(-1); // NaN
+Math.sqrt(2); // 1.424~~~
+```
+
+## Math.pow()
+
+pow 메소드는 제곱값을 반환해줍니다.
+
+```JS
+Math.pow(base, exponent)
+```
+
+base : 밑 값 (기준값)  
+exponent : base값을 제곱하기 위해 사용하는 지수
+
+```JS
+Math.pow(7, 2); // 49
+Math.pow(7, 3); // 343
+Math.pow(4, 0.5) // 2
+Math.pow(7, -2); // 0.02040816326530612 (1/49)
+Math.pow(-7, 1/3); 	// NaN
+```
+
+## Math.max()
+
+**Math.max()**함수는 입력값으로 받은 0개 이상의 숫자 중 가장 큰 숫자를 반환합니다.입력된 숫자 중 가장 큰 숫자를 반환합니다. 만약 인수 중 하나라도 숫자로 변환하지 못한다면 `NaN`로 반환합니다.
+
+**활용** (배열에서 최댓값 구하기)
+
+```js
+const numbers = [12, 2, 3, 4, 5, 77];
+console.log(...numbers); // 77
+```
+
+## parseInt()
+
+parseInt 메소드는 문자를 숫자로 변경합니다.
+**만약, string의 첫 글자를 정수로 변경할 수 없으면 Nan값을 리턴한다.**
+
+```JS
+parseInt("-10"); // -10
+```
+
+문자열 "-10"을 숫자로 변환하여 정수 음수 -10을 리턴합니다.
+
+```JS
+parseInt("10n"); // 10
+parseInt("10nnn13"); // 10
+```
+
+문자열의 첫 글자가 숫자이고, 그 이후에 숫자가 아닌 다른 문자열이 나올 경우 **숫자가 아닌 문자 이후의 값은 무시하고, 그 이전의 숫자만 정수로 변환합니다.**
+
+문자열 타입의 실수값은 소수점을 제거한 후, 정수값만 리턴합니다.
+
+```JS
+parseInt("10.9"); // 10
+```
+
+문자열의 첫글자가 숫자가 아니면, NaN(Not a Number)를 리턴합니다.
+
+```JS
+parseInt("k10"); // NaN
+```
+
+문자열의 첫글자는 반드시 숫자여야 하지만, 처음에 오는 공백 문자는 허용됩니다.
+
+```JS
+parseInt("    10"); // 10
+```
+
+문자열의 첫글자가 숫자이면, 뒤에 오는 공백은 무시됩니다.
+
+```JS
+parseInt("10      "); // 10
+```
+
+## join()
+
+```JS
+arr.join(separator)
+```
+
+join 메소드는 배열의 모든 값들을 연결한 문자열을 리턴합니다.  
+이때 각각의 값들 사이에는 파라미터로 입력된 구분자(separator)가 들어가게 됩니다.  
+**만약, separator를 입력하지 않은 경우, default로 ','가 들어갑니다.**
+
+```JS
+const arr = ['Apple', 'Banana', 'Orange'];
+const str1 = arr.join(); // "Apple, Banana, Orange"
+```
+
+파라미터에 아무 값이 안들어있기 때문에 ','로 연결됩니다.
+
+```JS
+const str2 = arr.join('-'); // "Apple-Banana-Orange"
+```
+
+```JS
+const str3 = arr.join(''); // "AppleBananaOrange"
+```
+
+## toString()
+
+toString 메소드는 배열을 표현하는 문자열을 리턴합니다.
+
+```JS
+const arr = ['Apple', 'Banana', 'Orange'];
+arr.toString(); // "Apple,Banana,Orange"
+```
+
+## reduce()
+
+reduce 메소드는 배열의 각 요소에 대해 주어진 **리듀서(reducer)** 함수를 실행하고, 하나의 결과값을 반환합니다. map메소드는 배열의 각 요소를 변형한다면 reduce는 배열 자체를 변형합니다.
+
+예를 들어 배열에 들어있는 숫자를 더하거나 평균을 구하는 것은 배열을 값 하나로 줄이는 동작입니다.
+
+리듀서 함수는 네개의 인자를 가집니다.
+
+1. 누산기accumulator (acc)
+2. 현재 값 (cur)
+3. 현재 인덱스 (idx)
+4. 원본 배열 (src)
+
+**구문**
+
+```
+arr.reduce(callback[, initialValue])
+```
+
+매개변수
+**callback**
+
+- accumulator
+  누산기는 콜백의 반환값을 누적합니다. 콜백의 이전 반환값 또는, 콜백의 첫 번째 호출이면서 `initialValue`를 제공한 경우에는 `initialValue`의 값입니다.
+- currentValue
+  처리할 현재 요소.
+- currentIndex
+  처리할 현재 요소의 인덱스. `initialValue`를 제공한 경우 0, 아니면 1부터 시작합니다.
+- array
+  `reduce()`를 호출한 배열.
+
+**initialValue**
+`callback`의 최초 호출에서 첫 번째 인수에 제공하는 값. 초기값을 제공하지 않으면 배열의 첫 번째 요소를 사용합니다. 빈 배열에서 초기값 없이 `reduce()`를 호출하면 오류가 발생합니다.
+
+**활용** (배열의 모든 값 합산)
+
+```js
+[0, 1, 2, 3, 4].reduce(function (
+  accumulator,
+  currentValue,
+  currentIndex,
+  array
+) {
+  return accumulator + currentValue; // 10
+});
+
+[0, 1, 2, 3, 4].reduce((prev, curr) => prev + curr); // 10
+```
+
+## reverse()
+
+배열의 순서를 거꾸로 만들어줍니다.
+
+```JS
+const arr = ['Apple', 'Banana', 'Orange'];
+const reverse = arr.reverse(); // ['Orange', 'Banana','Apple']
+```
+
+reverse() 함수를 사용하면 원본 배열이 변형됩니다. 원본 배열을 그대로 유지하고, 리턴되는 값만 변경하고 싶을 때는 원본 배열을 복사해서 사용해야 합니다.
+
+```js
+const arr = ["Apple", "Banana", "Orange"];
+const reverse = [...arr].reverse(); // spread 연산자 사용
+
+console.log(arr); // ['Apple', 'Banana', 'Orange']
+console.log(reverse); // ['Orange', 'Banana','Apple']
+```
+
+## sort()
+
+`sort()` 메서드는 배열의 요소를 적절한 위치에 정렬한 후 그 배열을 반환합니다. 원 배열이 정렬되는 것에 유의하세요. 복사본이 만들어지는 것이 아닙니다.
+
+```js
+const months = ["March", "Jan", "Feb", "Dec"];
+
+console.log(months.sort());
+
+// expected output: Array ["Dec", "Feb", "Jan", "March"]
+```
+
+**구문**
+
+```
+arr.sort([compareFunction])
+```
+
+**compareFunction Optional**
+정렬 순서를 정의하는 함수. 생략하면 배열은 각 요소의 문자열 변환에 따라 각 문자의 유니 코드 코드 포인트 값에 따라 정렬됩니다.
+
+**활용** (배열 오름차순으로 정렬)
+
+```js
+var numbers = [4, 2, 5, 1, 3];
+numbers.sort(function (a, b) {
+  return a - b;
+});
+console.log(numbers); // [1, 2, 3, 4, 5]
+```
+
+(배열 내림차순으로 정렬)
+
+```js
+var numbers = [4, 2, 5, 1, 3];
+numbers.sort(function (a, b) {
+  return b - a;
+});
+console.log(numbers); // [1, 2, 3, 4, 5]
+```
+
+## Array.from()
+
+`Array.from` 메서드는 유사 배열 객체나 반복 가능한 객체를 얕게 복사해 새로운 `Array`객체를 만듭니다.
+
+**구문**
+
+```js
+Array.from(arrayLike[, mapFn[, thisArg]])
+```
+
+- arrayLike
+  배열로 변환하고자 하는 유사배열 객체나 반복 가능한 객체.
+- mapFn
+  배열의 모든 요소에 대해 호출할 맵핑 함수.
+- thisArg
+  mapFn 실행시에 this로 사용할 값.
+
+**반환 값**  
+새로운 `Array` 인스턴스.
+
+**활용**
+String에서 배열 만들기
+
+```js
+Array.from("foo");
+// ["f", "o", "o"]
+```
+
+**Array.from과 화살표 함수 사용하기**
+
+```js
+Array.from([1, 2, 3], (x) => x + x);
+// [2, 4, 6]
+```
+
+## Array.indexOf()
+
+`indexOf()` 메서드는 배열에서 지정된 요소를 찾을 수 있는 첫 번째 인덱스를 반환하고 존재하지 않으면 -1을 반환합니다.
+
+**구문**
+
+```js
+arr.indexOf(searchElement[, fromIndex])
+```
+
+- searchElement
+  배열에서 찾을 요소
+- fromIndex
+  검색을 시작할 색인입니다.
+
+**반환**
+배열 내의 요소의 최초의 인덱스. 발견되지 않으면 -1.
+
+**활용**
+
+```js
+const beasts = ["ant", "bison", "camel", "duck", "bison"];
+
+console.log(beasts.indexOf("bison")); // 1
+
+// start from index 2
+console.log(beasts.indexOf("bison", 2)); // 4
+
+console.log(beasts.indexOf("giraffe")); // -1
+```
+
+## String.split()
+
+`split()`메서드는 String 객체를 지정한 구분자를 이용하여 여러 개의 문자열로 나눕니다.
+
+**구문**
+
+```js
+split();
+split(separator);
+split(separator, limit);
+```
+
+- separator
+  원본 문자열을 끊어야 할 부분을 나타내는 문자열을 나타냅니다.
+- limit
+  끊어진 문자열의 최대 개수를 나타내는 정수입니다.
+
+**반환**  
+주어진 문자열을 `separator`마다 끊은 부분 문자열을 담은 **Array**
+
+**활용**
+
+```js
+const myString = "Hello World. How are you doing?".split(" ");
+// 띄어쓰기 간격마다 배열 분리
+// [ 'Hello', 'World.', 'How', 'are', 'you', 'doing?' ]
+const myString = "Hello World. How are you doing?".split("H");
+// H가 들어갈 때마다 배열 분리
+// [ '', 'ello World. ', 'ow are you doing?' ]
+
+const myString = "Hello World. How are you doing?".split(" ", 3);
+//   ["Hello", "World.", "How"]
+```
+
+## String.repeat()
+
+**구문**
+
+```js
+str.repeat(count);
+```
+
+- count
+  문자열을 반복할 횟수.
+
+**반환**
+현재 문자열을 주어진 횟수만큼 반복해 붙인 새로운 문자열.
+
+**활용**
+
+```js
+"abc".repeat(2); // 'abcabc'
+```
+
+## String.substring()
+
+`substring()`메소드는 string 객체의 시작 인덱스로부터 종료 인덱스 전 까지 문자열의 부분 문자열을 반환합니다.
+
+**구문**
+
+```js
+str.substring(indexStart[, indexEnd])
+```
+
+- indexStart
+  반환 문자열의 시작 인덱스
+- indexEnd
+  옵션. 반환문자열의 마지막 인덱스
+
+```js
+var anyString = "Mozilla";
+
+// Displays 'M'
+console.log(anyString.substring(0, 1));
+console.log(anyString.substring(1, 0));
+
+// Displays 'Mozill'
+console.log(anyString.substring(0, 6));
+
+// Displays 'lla'
+console.log(anyString.substring(4));
+```
+
+**반환**
+
+기존 문자열의 부분 문자열을 반환
+
+## Array 추가 및 제거 메소드
+
+**배열에 값을 추가하는 함수**
+
+1. .push() : 배열의 맨 끝에 값을 추가
+2. .unshift() : 배열의 맨 앞에 값을 추가
+
+**배열에 값을 제거하는 함수**
+
+1. .pop() : 배열의 맨 끝에 값을 제거
+2. .shift() : 배열의 맨 앞에 값을 제거
+
+## Array.findIndex()
+
+`findIndex()` 메서드는 **주어진 판별 함수**를 만족하는 배열의 첫 번째 요소에 대한 인덱스를 반환합니다. 만족하는 요소가 없으면 -1을 반환합니다.
+
+```js
+const array1 = [5, 12, 8, 130, 44];
+
+const isLargeNumber = (element) => element > 13;
+
+console.log(array1.findIndex(isLargeNumber));
+// Expected output: 3
+```
+
+indexOf와 차이점은 findIndex는 함수를 인자로 준다는 것이고 indexOf는 값을 인자로 넘겨준다.
+
+findIndex는 index를 반환하고 인덱스 대신 값을 반환하는 find 메서드도 있다.
+
+**구문**
+
+```js
+arr.findIndex(callback(element[, index[, array]])[, thisArg])
+```
+
+- callback
+  3개 인수를 취하여 배열의 각 값에 대해 실행할 함수 입니다.
+- element
+  배열에서 처리중인 현재 요소입니다.
+- index
+  배열에서 처리중인 현재 요소의 인덱스 입니다.
+- array
+  findIndex함수가 호출된 배열입니다.
+
+## Array.fill()
+
+`fill()`은 배열의 시작 인덱스부터 끝 인덱스의 이전까지 정적인 값 하나로 채웁니다.
+
+```js
+const array1 = [1, 2, 3, 4];
+
+// Fill with 0 from position 2 until position 4
+console.log(array1.fill(0, 2, 4));
+// Expected output: Array [1, 2, 0, 0]
+
+// Fill with 5 from position 1
+console.log(array1.fill(5, 1));
+// Expected output: Array [1, 5, 5, 5]
+
+console.log(array1.fill(6));
+// Expected output: Array [6, 6, 6, 6]
+```
+
+**구문**
+
+```js
+arr.fill(value[, start[, end]])
+```
+
+- value
+  배열을 채울 값.
+- start
+  시작 인덱스, 기본 값은 0.
+- end
+  끝 인덱스.
+
+## Array.from()
+
+`from()`은 유사 배열 객체나 반복 가능한 객체를 얕게 복사해 새로운 Array 객체를 만듭니다.
+
+```js
+console.log(Array.from("foo"));
+// Expected output: Array ["f", "o", "o"]
+
+console.log(Array.from([1, 2, 3], (x) => x + x));
+// Expected output: Array [2, 4, 6]
+```
+
+**구문**
+
+```js
+Array.from(arrayLike[, mapFn[, thisArg]])
+```
+
+- arrayLike
+  배열로 변환하고자 하는 유사 배열 객체나 반복 가능한 객체.
+- mapFn
+  배열의 모든 요소에 대해 호출할 맵핑 함수.
+
+**활용**  
+10부터 1씩 줄어드는 배열 만들기
+
+```js
+function solution(start, end) {
+  return Array.from(Array(start - end + 1), (_, i) => start - i);
+}
+```
