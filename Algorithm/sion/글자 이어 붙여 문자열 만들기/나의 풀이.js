@@ -1,0 +1,1 @@
+ index_list.map((index)=>my_string[index]).join('')
