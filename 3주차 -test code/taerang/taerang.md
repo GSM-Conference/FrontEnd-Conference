@@ -49,6 +49,57 @@ Java Annotation : 자바의 어노테이션은 소스코드에 추가해서 사�
     assertEquals 메서드를 이용하여 testAdd 메서드에서 Calculator 클래스의 add 메서드가
     반환한 값이 예상 값과 같은지 검사를 한다.
 
+### Jest
+
+#### 초기 세팅
+
+    // 설치
+    $ npm install jest --save-dev
+
+    // ESLint Testing Plugins 설치
+    $  npm install eslint-plugin-testing-library eslint-plugin-jest-dom
+
+    > package.json에 eslintConfig 삭제
+
+```json
+{
+  "plugins": ["testing-library", "jest-dom"],
+  "extends": [
+    "react-app",
+    "react-app/jest",
+    "plugin:testing-library/react",
+    "plugin:jest-dom/recommended"
+  ]
+}
+```
+
+#### Jest란
+
+    Jest는 단순함에 초점을 맞춘 자바스크립트 테스트 프레임워크이다.
+    Jest는 React 뿐만 아니라 Babel, TypeScript, Vue,Node 등 다양한 곳에서 사용 할 수 있는
+    테스트 러너이며 직접적으로 테스트를 실행 해주는 역할을 할 수 있다.
+
+    1. FaceBook에 의해서 만들어진 테스팅 프레임워크이다.
+    2. 최소한의 설정으로 동작하며 Test Case 를 만들어서 어플리케이션 코드가 잘 돌아가는지 확인
+    3. 단위 (Unit) 테스트를 위해서 이용
+
+##### Jest 파일 구조
+
+    1. describe에 test케이스들이 들어와 있는 구조이다.
+    2. describe : 여러 관련 테스트를 그룹화 하는 블록 제작한다.
+    3. test, it : 개별 테스트를 수행하는 곳, 각 테스트를 작은 문장처럼 설명
+
+### testing-library-react
+
+    React는 JSX 문법이 사용된 Component라는 개념이다.
+    일반 javascript 가 아니기 때문에, 테스트 러너에서 쉽게 동작하기 위해서 필요한
+    라이브러리가 testing-library-react이다.
+
+    //설치
+    npm install --save-dev @testing-library/react
+
+    @testing-library는 UI 컴포넌트를 사용자 친화적으로 테스트할 수 있게 도와주는 패키지 묶음이다.
+
 #### 2. 통합 테스트 (Integration Testing)
 
     통합테스트는 서로 다른 모듈들 간의 상호작용을 테스트 하는 과정이다. 예를 들어 새로 개발한 API 서버 내
