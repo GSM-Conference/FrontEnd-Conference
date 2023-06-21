@@ -1,11 +1,6 @@
 function solution(k, m, score) {
   let answer = 0;
-  const sortedScore = score
-    .slice()
-    .sort((a, b) => a - b)
-    .slice(score.length % m);
-  for (let i = 0; i < sortedScore.length; i += m) {
-    answer += sortedScore[i] * m;
-  }
+  score = score.sort((a, b) => b - a);
+  for (let i = m - 1; i < score.length; i += m) answer += score[i] * m;
   return answer;
 }
