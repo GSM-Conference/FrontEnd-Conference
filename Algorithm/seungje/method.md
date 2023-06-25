@@ -86,3 +86,21 @@ console.log(num); // => 3
 
 인자로 제곱근을 구할 수가 들어간다.  
 세제곱근을 구하려면 `cbrt`를 사용한다.
+
+## charCodeAt
+
+`charCodeAt`는 문자의 아스키 코드를 알려준다.
+
+```js
+const a = "a";
+console.log(a.charCodeAt()); // => 97
+```
+
+## fromCharCode
+
+`fromCharCode`는 아스키 코드를 문자로 바꿔준다.
+
+```js
+const a = "a";
+console.log(String.fromCharCode(a.charCodeAt())); // => a
+```
