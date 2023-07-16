@@ -4,7 +4,7 @@
 
 ### Redux(리덕스)란?
 
-- ##### Redux(리덕스)란 JavaScript(자바스크립트) 상태관리 라이브러이다.
+- ##### Redux(리덕스)란 JavaScript(자바스크립트) 상태관리 라이브러리이다.
 
 * ##### Redux(리덕스)의 본질은 Node.js 모듈이다.
 
@@ -37,7 +37,7 @@
 - ##### 컴포넌트와는 별개로 스토어라는 공간이 있어서 그 스토어 안에 앱에서 필요한 상태를 담는다.
 - ##### 컴포넌트에서 상태 정보가 필요할 때 스토어에 접근한다.
 
-      현재의 앱 상태(state), Reducer, 추가적인 내장 함수들(dispatch, subscribe)등이 있다.
+      스토어는 현재의 앱 상태(state), Reducer, 추가적인 내장 함수들(dispatch, subscribe)등이 있다.
 
   ```js
   import { createStore } from "redux";
