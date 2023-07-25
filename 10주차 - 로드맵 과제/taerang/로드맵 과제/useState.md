@@ -1,6 +1,6 @@
 # useState란 무엇일까❓
 
-<img src=""/>
+<img src="./img/useState-hook.png"/>
 
 #### `useState`구성 요소에 상태 변수를 추가할 수 있는 React Hook이다.
 
@@ -11,7 +11,7 @@ const [state, setState] = useState(initialState);
 
 ## 참조
 
-#### `useState(initialState) `
+#### `useState(initialState)`
 
 `useState`구성 요소의 최상위 수준에서 호출하여 상태 변수를 선언을 한다.
 
