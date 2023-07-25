@@ -147,8 +147,6 @@ ReactDOM.render(<App />, document.querySelector("#app"));
 
 ### 마치며
 
-<img src="./img/end photo.jpeg" width="800px"/>
-
     Control Props Pattern에 대해서 알아보았다. 처음에 사실 엄청 어려운 내용이라고 생각을 하였는데,
     아직도 조금 미숙한..? 부분이 있는 것 같지만 코드를 보고 분석하는 것이 뜻 깊었다. 하지만 공부할 자료의 내용이
     많이 부족한 것 같아서 아쉬운 면이 있는 것 같기도 하다. 내가 조사한 리액트 패턴 말고 다른 패턴도 조사해서
