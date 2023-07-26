@@ -1,4 +1,4 @@
-# useReducer란 무엇일❓
+# useReducer란 무엇일까❓
 
 #### `useReducer`컴포넌트에 리듀서를 추가할 수 있는 React Hook이다.
 
@@ -178,4 +178,4 @@ function TodoList({ username }) {
 
 ### 마치며
 
-    useRef라는 개념이 처음에는 되게 어렵게 느껴졌는데 문서를 보면서 공부해보니까 새로운 점을 알게 되어서 좋았다.
+    useReducer라는 개념이 처음에는 되게 어렵게 느껴졌는데 문서를 보면서 공부해보니까 새로운 점을 알게 되어서 좋았다.
