@@ -69,5 +69,6 @@ const areEqual = (prevProps, nextProps) => {
 ## 많은 코드에 React.memo 적용법
 
 ```js
+//맨 마지막 export default CountA 라는 부분을 React.memo로 감싸주면 된다!!!!!!!!!!!
 export default React.memo(CountA);
 ```
